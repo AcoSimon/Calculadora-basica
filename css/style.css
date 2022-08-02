@@ -1,0 +1,201 @@
+/* Importar iconos de bootstrap: */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+/* Paleta de colores y tamaños generales de letras: */
+  :root{
+    /* Barra de navegacion: */
+    --colorBTNnav: #b2123b;
+    --colorBTN2nav: #007ACC;
+    --colorBackgroundNav: #333;
+    /* Paleta de colores */
+    --colorBackground: #1E1E1E;
+    --colorfontTit: #6A9949;
+    --colorfont: #fff;
+    --line: #D7AB4C;
+    --colorBTNII: #132C61;
+    /* Letras: */
+    --fontSizeTitPrimary: 1.5rem;
+    --fontSizeTit: 1rem;
+    --fontSizeFooter: 0.5rem;
+    --btnSize: 70px;
+    --fontFamily: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva' , 'Verdana' , 'sans-serif';
+  }
+  
+  /* Clases: NO borrar */
+.topnav {
+  overflow: hidden;
+  background-color: var(--colorBackgroundNav);
+  display: flex;
+  justify-content: stretch;
+  cursor: pointer;
+}
+
+.topnav a {
+  float: left;
+  color: var(--colorfont);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer !important;
+}
+
+.topnav a:hover {
+  background-color: var(--colorfontTit);
+  color: var(--colorBackground);
+  cursor: auto;
+  cursor: pointer;
+}
+
+.topnav a.active {
+  background-color: var(--colorBTNnav);
+  color: var(--colorfont);
+  cursor: pointer;
+}
+
+/* ETIQUETAS: */
+body{
+  background-color: var(--colorBackground) !important;
+  color: var(--colorfont);
+  transition: all 0.3s ease 0s;
+  max-height: 85vh;
+}
+
+footer{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 2%;
+  text-decoration: none;
+
+  color: var(--colorfont);
+  font-size: var(--fontSizeFooter);
+}
+
+section{
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+label{
+  color: var(--colorfont);
+  margin: 0.3%;
+}
+p{
+  color: var(--colorfont);
+}
+a{
+  color: var(--colorfont);
+  cursor: pointer;
+}
+
+/* Clases: */
+
+.display{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  font-weight: 700;
+  min-height: 72px;
+  height: 14vh;
+  width: 85%;
+  border-radius: 10px;
+  
+  font-size: var(--fontSizeTitPrimary);
+  color: var(--colorBTN2nav);
+  background-color: var(--colorfont);
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
+  cursor: none;
+}
+
+.btnS{
+  display: flex;
+  justify-content: center;
+}
+
+.calculadora{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.numberKey{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btnNumeric{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 800;
+  margin: 1%;
+  width: var(--btnSize);
+  height: var(--btnSize);
+  background-color: var(--colorfont);
+  color: var(--colorBTN2nav);
+  transition: all 0.3s ease 0s;
+}
+
+.btnNumeric:hover{
+  background-color: var(--colorBTN2nav);
+  color: var(--colorfont);
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
+}
+
+.btnOperator{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 800;
+  margin: 1%;
+  width: var(--btnSize);
+  height: var(--btnSize);
+  background-color: var(--colorBTNnav);
+  color: var(--colorfont);
+  transition: all 0.3s ease 0s;
+}
+
+.btnOperator:hover{
+  background-color: var(--colorBTNII);
+  color: var(--line);
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
+}
+
+.SPC{
+  background-color: var(--line) !important;
+  color: var(--colorBackgroundNav) !important;
+  
+}
+.SPC:hover{
+  background-color: var(--colorBackgroundNav) !important;
+  color: var(--colorBTN2nav) !important;
+}
+
+.btnNumericII{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 800;
+  margin: 1%;
+  width: var(--btnSize);
+  height: var(--btnSize);
+  background-color: var(--colorfontTit);
+  color: var(--colorBackgroundNav);
+  transition: all 0.3s ease 0s;
+}
+
+.btnNumericII:hover{
+  color: var(--colorfont) !important;
+  background-color: var(--colorBackgroundNav) !important;
+  color: var(--line) !important;
+}
