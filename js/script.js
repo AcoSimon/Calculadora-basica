@@ -13,6 +13,12 @@ let e7 = document.getElementById('7').value;
 let e8 = document.getElementById('8').value;
 let e9 = document.getElementById('9').value;
 
+/*
+git pull
+git status
+git add .
+git commit -m "mensajiño"
+ */
 
 // Funciones:
 function suma(x, y) {
