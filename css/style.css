@@ -2,6 +2,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 /* Paleta de colores y tamaños generales de letras: */
   :root{
+    /* Display */
+    --verResultados: none;
+    --verCalculadora: flex;
     /* Barra de navegacion: */
     --colorBTNnav: #b2123b;
     --colorBTN2nav: #007ACC;
@@ -13,10 +16,13 @@
     --line: #D7AB4C;
     --colorBTNII: #132C61;
     /* Letras: */
-    --fontSizeTitPrimary: 1.5rem;
+    --bodySizeMAX: 70vh;
+    --fontSizeTitPrimary: 2.5rem;
     --fontSizeTit: 1rem;
     --fontSizeFooter: 0.5rem;
-    --btnSize: 70px;
+    --btnSizeMAX: 90px;
+    --btnSize: 5.5rem;
+    --btnSizeMIN: 18px;
     --fontFamily: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva' , 'Verdana' , 'sans-serif';
   }
   
@@ -56,8 +62,8 @@
 body{
   background-color: var(--colorBackground) !important;
   color: var(--colorfont);
-  transition: all 0.3s ease 0s;
-  max-height: 85vh;
+  transition: all 0.3s ease 0s !important;
+  height: var(--bodySizeMAX);
 }
 
 footer{
@@ -65,9 +71,10 @@ footer{
   justify-content: end;
   align-items: center;
   margin-right: 2%;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-weight: 800;
 
-  color: var(--colorfont);
+  color: var(--colorfont) !important;
   font-size: var(--fontSizeFooter);
 }
 
@@ -89,26 +96,11 @@ a{
   cursor: pointer;
 }
 
-/* Clases: */
-
-.display{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-  font-weight: 700;
-  min-height: 72px;
-  height: 14vh;
-  width: 85%;
-  border-radius: 10px;
-  
-  font-size: var(--fontSizeTitPrimary);
-  color: var(--colorBTN2nav);
-  background-color: var(--colorfont);
-  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
-  cursor: none;
+form{
+  max-height: 95vh;
+  min-height: 90vh;
 }
+/* Clases: */
 
 .btnS{
   display: flex;
@@ -118,6 +110,8 @@ a{
 .calculadora{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 90vh;
   border-radius: 20px;
 }
 
@@ -125,6 +119,7 @@ a{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
 }
 
 .btnNumeric{
@@ -135,7 +130,12 @@ a{
   border-radius: 20px;
   font-weight: 800;
   margin: 1%;
+  min-height: var(--btnSizeMIN);
+  min-width: var(--btnSizeMIN);
+  height: var(--btnSize);
   width: var(--btnSize);
+  max-height: var(--bodySizeMAX);
+  max-width: var(--bodySizeMAX);
   height: var(--btnSize);
   background-color: var(--colorfont);
   color: var(--colorBTN2nav);
@@ -156,8 +156,12 @@ a{
   border-radius: 20px;
   font-weight: 800;
   margin: 1%;
-  width: var(--btnSize);
+  min-height: var(--btnSizeMIN);
+  min-width: var(--btnSizeMIN);
   height: var(--btnSize);
+  width: var(--btnSize);
+  max-height: var(--bodySizeMAX);
+  max-width: var(--bodySizeMAX);
   background-color: var(--colorBTNnav);
   color: var(--colorfont);
   transition: all 0.3s ease 0s;
@@ -168,11 +172,13 @@ a{
   color: var(--line);
   box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
 }
-
+.btnOperator:active{
+  background-color: var(--colorBackgroundNav) !important;
+  color: var(--colorBTN2nav) !important;
+}
 .SPC{
   background-color: var(--line) !important;
-  color: var(--colorBackgroundNav) !important;
-  
+  color: var(--colorBackgroundNav) !important; 
 }
 .SPC:hover{
   background-color: var(--colorBackgroundNav) !important;
@@ -198,4 +204,54 @@ a{
   color: var(--colorfont) !important;
   background-color: var(--colorBackgroundNav) !important;
   color: var(--line) !important;
+}
+
+.btnNumericII:active{
+  background-color: var(--colorBackgroundNav) !important;
+  color: var(--colorBTN2nav) !important;
+}
+.displayCal{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  font-weight: 700;
+  min-height: 10%;
+  height: 4.4rem;
+  max-height: 20%;
+  width: 100%;
+  border-radius: 10px;
+  
+  font-size: var(--fontSizeTitPrimary);
+  color: var(--colorBTN2nav);
+  background-color: var(--colorfont);
+
+  margin-bottom: 2%;
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 10%);
+  cursor: none;
+}
+
+.displayCal:hover{
+  background-color: var(--colorBackgroundNav);
+  color: var(--line);
+}
+
+.displayCal:active{
+  background-color: var(--colorfontTit);
+  color: var(--colorBackgroundNav);
+}
+.calculadoraBtn{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#calculadora{
+  display: var(--verCalculadora);
+}
+
+#historial{
+  display: var(--verResultados);
 }
